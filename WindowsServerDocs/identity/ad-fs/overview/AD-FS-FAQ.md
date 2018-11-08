@@ -14,7 +14,7 @@ ms.technology: identity-adfs
 
 # AD FS Frequently Asked Questions (FAQ)
 
->Applies To: Windows Server 2016
+>Applies To: Windows Server 2016, Windows Server 2016
 
 The following documentation is a home to frequently asked questions with regard to Active Directory Federation Services.  The document has been split into groups based on the type of question.
 
@@ -177,6 +177,8 @@ HTTP Strict Transport Security (HSTS) is a web security policy mechanism which h
 All AD FS endpoints for web authentication traffic are opened exclusively over HTTPS.  As a result, AD FS effectively mitigates the threats that HTTP Strict Transport Security policy mechanism provides (by design there is no downgrade to HTTP since there are no listeners in HTTP). In addition, AD FS prevents the cookies from being sent to another server with HTTP protocol endpoints by marking all cookies with the secure flag.
 
 Therefore, implementing HSTS on an AD FS server is not required because it can never be downgraded.  For compliance purposes, AD FS servers meet these requirements because they can never use HTTP and all cookies are marked secure.
+
+Additionally, Windows Server 2019 now supports the ability to set the HSTS header in addition to additional headers. See [What's new in ADFS 2019] (https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/overview/whats-new-active-directory-federation-services-windows-server#whats-new-in-active-directory-federation-services-for-windows-server-2019) for more information. 
 
 ### X-ms-forwarded-client-ip does not contain the IP of the client but contains IP of the firewall in front of the proxy. Where can I get the right IP of the client?
 It is not recommended to do SSL termination before WAP. In case SSL termination is done in front of the WAP, the X-ms-forwarded-client-ip will contain the IP of the network device in front of WAP. Below is a brief description of the various IP related claims that are supported by AD FS:
