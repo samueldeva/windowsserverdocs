@@ -11,13 +11,15 @@ ms.technology: identity-adfs
 ms.author: billmath
 ---
 
-# Upgrading to AD FS in Windows Server 2016 using a WID database
+# Upgrading to AD FS in Windows Server 2016/2019 using a WID database
 
 >Applies To: Windows Server 2019, Windows Server 2016
 
 
 ## Upgrading a Windows Server 2012 R2 or 2016 AD FS farm to Windows Server 2019 
-The following document will describe how to upgrade your AD FS farm to AD FS in Windows Server 2019 when you are using a WID database.  
+The following document will describe how to upgrade your AD FS farm to AD FS in Windows Server 2019 when you are using a WID database.
+
+AD FS in 2016/2019 makes it easy to upgrade with little risk by offering a "mixed" mode. It is now possible to just add a "single" node of AD FS to the farm and add it to your load balancer. This provides administrators to validate existing functionality in a phased manner and slowly increase the load to nodes of the newer version until 100% of the load in on the new nodes. 
 
 ### AD FS Farm Behavior Levels (FBL)  
 In AD FS for Windows Server 2016, the farm behavior level (FBL) was introduced. This is farm-wide setting that determines the features the AD FS farm can use. 
